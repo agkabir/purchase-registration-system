@@ -1,0 +1,42 @@
+<!-- extends base -->
+{% extends "base.html" %}
+<!-- page title  -->
+{% block title %}Login{% endblock %}
+<!-- page content -->
+{% block content %}
+<form class="mt-4" method="POST">
+  {% csrf_token %}
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="username">User Name</label>
+    <input
+      type="text"
+      id="username"
+      name="username"
+      class="form-control"
+      required
+    />
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      required
+    />
+  </div>
+
+  <!-- Submit button -->
+  <button
+    type="submit"
+    class="btn text-white btn-block mb-4"
+    style="background-color: #294954"
+  >
+    Log in
+  </button>
+</form>
+{% endblock %}
